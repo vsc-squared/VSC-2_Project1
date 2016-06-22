@@ -79,21 +79,27 @@ public class Game {
 	 */
 	public Team play() {
 
+	public Team play() {
+
 		team1Determinate = team1.TeamDeterminateCalculator();
 		team2Determinate = team2.TeamDeterminateCalculator();
 
+	
 		Random generator1 = new Random();
-		double number1 = generator1.nextGaussian();
+		double number1 = generator1.nextFloat();
 		Random generator2 = new Random();
-		double number2 = generator2.nextGaussian();
-		team1Stochiastic = 10 * number1;
-		team2Stochiastic = 10 * number2;
-
+		double number2 = generator2.nextFloat();
+		
+		//Here the stochiastic was changed to a number of feild goals earned, between 0 through 4, which is 0, 3,6,9, or 12 points)
+		
+		team1Stochiastic = 3*(int)(10 * number1)/2;
+		team2Stochiastic = 3*(int)(10 * number2)/2;
 		team1advantage = 7;
 		team2advantage = 0;
 
 		team1Score = team1Determinate + team1Stochiastic + team1advantage;
 		team2Score = team2Determinate + team2Stochiastic + team2advantage;
+
 
 		if (team1Score > team2Score) {
 			victor = team1;
