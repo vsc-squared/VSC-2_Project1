@@ -238,7 +238,7 @@ public class Team {
 				sum = sum + determinate;
 			}
 		}
-		return sum;
+		return 7*(sum/150);
 	}
 
 	public double profitCalculator() {
